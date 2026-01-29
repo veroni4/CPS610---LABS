@@ -1,7 +1,8 @@
 import java.io.*;
 import java.sql.*;
 import java.util.Scanner;
-
+//javac -cp ojdbc17.jar calGPA.java
+//java -cp .:ojdbc17.jar calGPA
 class calGPA{
     public static void main (String args[]) throws SQLException, IOException{
         try{
@@ -18,7 +19,7 @@ class calGPA{
         dbacct = scanner.next();
         System.out.println("Enter password: ");
         passwrd = scanner.next();
-        Connection conn = DriverManager.getConnection("jdbc:oracle:oci8:"+dbacct+"/"+passwrd);
+        Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@orsrv1.cs.torontomu.ca:1521/orcldb", dbacct, passwrd);
         String stmt1 = "select G.Grade, C.Credit_hours from STUDENT S, GRADE_REPORT G, SECTION SEC, COURSE C where G.Student_number=S.Student_number AND G.Section_identifier=SEC.Section_identifier AND SEC.Course_number=C.Course_number AND S.Name=?";
         PreparedStatement p = conn.prepareStatement(stmt1);
         System.out.println("Please enter your name: ");
