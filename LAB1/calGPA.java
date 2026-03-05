@@ -36,11 +36,11 @@ class calGPA{
             grade = r.getString(1).charAt(0); // extract grade and credit hours from result set
             credit = r.getInt(2);
             switch (grade){ // switch case to calculate grade points based on grade received
-                case 'A': sum=sum+(4*credit); count=credit+1; break;
-                case 'B': sum=sum+(3*credit); count=credit+1; break;
-                case 'C': sum=sum+(2*credit); count=credit+1; break;
-                case 'D': sum=sum+(1*credit); count=credit+1; break;
-                case 'F': sum=sum+(0*credit); count=credit+1; break;
+                case 'A': sum=sum+(4*credit); count=count+1; break;
+                case 'B': sum=sum+(3*credit); count=count+1; break;
+                case 'C': sum=sum+(2*credit); count=count+1; break;
+                case 'D': sum=sum+(1*credit); count=count+1; break;
+                case 'F': sum=sum+(0*credit); count=count+1; break;
                 default: System.out.println("This grade "+grade+" will not be calculated."); break;
             }
         };

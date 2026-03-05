@@ -1,0 +1,52 @@
+================================================================================
+CONFLICT SERIALIZABILITY TEST - DETAILED RESULTS
+================================================================================
+
+
+================================================================================
+Schedule 1
+================================================================================
+
+Original Schedule:
+  R1(X), W1(X), R3(X), W3(X), W2(X), R1(Y), W1(Y), C1, W3(Y), C3, R2(Y), W2(Y), C2
+
+Result: CONFLICT SERIALIZABLE
+Conflicts Detected: 14
+Contains Cycle: No
+
+Number of Equivalent Serial Schedules: 1
+
+All Equivalent Serial Schedules:
+  1. T1 → T3 → T2
+
+
+================================================================================
+Schedule 2
+================================================================================
+
+Original Schedule:
+  R2(X), W2(X), R3(Y), W3(Y), R3(Z), W3(Z), C3, R2(Z), W2(Z), C2, R1(X), W1(X), C1
+
+Result: CONFLICT SERIALIZABLE
+Conflicts Detected: 6
+Contains Cycle: No
+
+Number of Equivalent Serial Schedules: 1
+
+All Equivalent Serial Schedules:
+  1. T3 → T2 → T1
+
+
+================================================================================
+Schedule 3
+================================================================================
+
+Original Schedule:
+  W1(A), W2(B), W3(C), R1(X), R2(X), R1(Y), W1(X), C1, W2(Y), C2, W3(Y), C3
+
+Result: NOT CONFLICT SERIALIZABLE
+Conflicts Detected: 4
+Contains Cycle: Yes
+
+No equivalent serial schedule exists (schedule contains a cycle).
+

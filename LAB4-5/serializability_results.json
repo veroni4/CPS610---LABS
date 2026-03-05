@@ -1,0 +1,27 @@
+{
+  "Schedule 1": {
+    "schedule": "R1(X), W1(X), R3(X), W3(X), W2(X), R1(Y), W1(Y), C1, W3(Y), C3, R2(Y), W2(Y), C2",
+    "serializable": true,
+    "num_conflicts": 14,
+    "has_cycle": false,
+    "equivalent_serial_schedules": [
+      "T1 \u2192 T3 \u2192 T2"
+    ]
+  },
+  "Schedule 2": {
+    "schedule": "R2(X), W2(X), R3(Y), W3(Y), R3(Z), W3(Z), C3, R2(Z), W2(Z), C2, R1(X), W1(X), C1",
+    "serializable": true,
+    "num_conflicts": 6,
+    "has_cycle": false,
+    "equivalent_serial_schedules": [
+      "T3 \u2192 T2 \u2192 T1"
+    ]
+  },
+  "Schedule 3": {
+    "schedule": "W1(A), W2(B), W3(C), R1(X), R2(X), R1(Y), W1(X), C1, W2(Y), C2, W3(Y), C3",
+    "serializable": false,
+    "num_conflicts": 4,
+    "has_cycle": true,
+    "equivalent_serial_schedules": []
+  }
+}
